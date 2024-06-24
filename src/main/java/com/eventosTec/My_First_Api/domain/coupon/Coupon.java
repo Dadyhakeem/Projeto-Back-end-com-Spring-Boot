@@ -9,6 +9,9 @@ import org.yaml.snakeyaml.events.Event;
 import com.eventosTec.My_First_Api.domain.eventos.Eventos;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -24,7 +27,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Coupon {
-
+     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
     private String code;
     private Integer discount;
